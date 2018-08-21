@@ -16,7 +16,7 @@ I neede a simple replacement for a contact form to avoid unencrypted transfer of
  
 To uninstall simply delete the [plugin files](update.ini).
 
-> It may be more comfortable to unzip `cmail.php` locally for configuration (s. "Setup") and copy it then manually into the`system/plugins` folder.
+**Note**: It may be more comfortable to unzip `cmail.php` locally for configuration (s. "Setup") and copy it then manually into the`system/plugins` folder.
 
 ### Setup
 
