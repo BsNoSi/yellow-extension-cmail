@@ -55,7 +55,7 @@ Based on the data above:
 
 ```
 
-results in a textlink `contact` and a `mailto` 
+results in this html code: 
 
 ```
 <a href=mailto:mail@domain.tld?subject=preccessor%20subject:%20Sample%20Text&body=Backlink:%20https//:www.domain.tld/edit/%20(Please%20do%20not%20remove)%0A%0AHello%21%0A%0A[Your%20Text]>contact</a>
@@ -64,7 +64,7 @@ results in a textlink `contact` and a `mailto`
 This opens a new prefilled e-mail from the homepage with this content:
 
 ```
-to: mail@domain.ltd
+to: mail@domain.tld
 subject: preccessor subject: Sample Text
 Body:
 
