@@ -26,14 +26,18 @@ You have to configure the plugin to your needs. Search in the plugin for this pa
 // Setup for e-mail
 			$m_adress = "mail@sit.tld";
 			$m_site  = "https//:www.domain.tld";
-			$m_subtitle = "Startertext Subject: ";
+			$m_subtitle = "preccessor subject: ";
 			$m_body = " (Please do not remove)\n\nHello!\n\n[Your Text]";
 			if (empty($m_link)) $m_link = "contact";
 // End setup
 ```
 
-**Note:** Where necessary the encoding is translated to *mailto*-specific values. `\n` is translated to a line-feed.
+**Notes:** 
 
+- Where necessary the encoding is translated to *mailto*-specific values. `\n` is translated to a line-feed.
+- The `m_subtilte` can be used for filtering mails to dedicated folders in your e-mail client.
+- `m_body` is directly appended to the backlink which is the first entry of the e-mail body.
+- You may use a dedicated e-mail adress for these contacts and if the `m_subtitle` part is missing it is a good indicator for a grabbed e-mail sent by a spammer.
 
 ## How do I use cmail plugin?
 
