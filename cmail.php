@@ -1,7 +1,7 @@
 <?php
-// cmail Plugin for YElLOW 
-// Copyright (c) 2018ff NoSi.de
-// This file may be used and distributed under the terms of the MIT license.
+// cmail Plugin for YElLOW Copyright (c)2018 NoSi.de
+// YELLOW Copyright (c) 2013-2017 Datenstrom, http://datenstrom.se
+// This file may be used and distributed under the terms of the public license.
 // EDIT THE SETUP FOR E-MAIL!
 
 class YellowCmail {
