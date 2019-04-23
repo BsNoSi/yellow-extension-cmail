@@ -58,10 +58,9 @@ Using all options: `[cmail "Sample Text" "Text for Link"]`
 
 The last exapmle results in this HTML code:
 
-´´´
+```
 <a href=mailto:pages@nosi.de?subject=Buoa.de:%20Sample%20Text&body=Backlink:%20https://buoa.de/edit/%0ALeave%20this%20link%20as%20information%20in%20the%20text,%20please%21%0A%0AYour%20request:>Text for Link</a>
-
-´´´
+```
 
 The last example opens a new prefilled e-mail from the homepage with this content:
 
@@ -74,9 +73,7 @@ Backlink: https//:www.domain.tld/
 Leave this link as information in the text, please!
 
 Your Request:
-
 ```
-
 
 ## Developer
 
