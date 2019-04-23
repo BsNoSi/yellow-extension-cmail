@@ -1,0 +1,12 @@
+# Datenstrom Yellow language file
+
+Language: de
+LanguageDescription: Deutsch
+LanguageTranslator: Norbert Simon
+
+cmail_adress: name@domain.tld
+cmail_site: https://www.domain.tld
+cmail_subtitle: domain.tld:
+cmail_body: /nBitte diese Adresse als Information im Text lassen!/n/nIhre Anfrage:
+cmail_link: Anfrage per E-Mail 
+

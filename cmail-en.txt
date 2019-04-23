@@ -1,0 +1,11 @@
+# Datenstrom Yellow language file
+
+Language: en
+LanguageDescription: English
+LanguageTranslator: Norbert Simon
+
+cmail_adress: name@domain.tld
+cmail_site: https://www.domain.tld
+cmail_subtitle: domain.tld:
+cmail_body: /nLeave this link as information in the text, please!/n/nYour request:
+cmai_link.Inquiry by e-mail
