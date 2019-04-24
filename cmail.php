@@ -1,7 +1,9 @@
 <?php
-// cmail Plugin for YElLOW Copyright (c)2018 NoSi.de
-// YELLOW Copyright (c) 2013-2017 Datenstrom, http://datenstrom.se
+// cmail extension for YELLOW, https://github.com/bsnosi/yellow-extension-cmail
+// Copyright ©2018-now Norbert Simon, https://nosi.de for
+// YELLOW Copyright ©2013-now Datenstrom, http://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
+// requires YELLOW 0.8.4 or higher
 // ***************************************************************
 // EDIT THE SETUP FOR E-MAIL IN EVERY TXT-FILE BELONGING TO CMAIL!
 // ***************************************************************
@@ -41,3 +43,4 @@ class YellowCmail {
 		
     }	
 }
+?>
