@@ -9,7 +9,7 @@
 // ***************************************************************
 
 class YellowCmail {
-    const VERSION = "1.1.0";
+    const VERSION = "1.1.1";
     const TYPE = "feature";
     public $yellow;         //access to API
 
@@ -31,7 +31,8 @@ class YellowCmail {
 			$subject = str_replace($r_in,$r_out,$this->yellow->text->get("cmail_subtitle") ." ". $subject);
 			$output = " <a href=mailto:" . $this->yellow->text->get("cmail_adress") . "?subject=" . $subject;
 			$output .= "&body=Backlink:%20" . $this->yellow->text->get("cmail_site") . $yellow->page->base . $_SERVER['REQUEST_URI'];
-			$output .= str_replace($r_in, $r_out,$this->yellow->text->getHtml("cmail_body")) . ">";
+			$output .= str_replace($r_in, $r_out,$this->yellow->text->getHtml("cmail_body"));
+			$output .= "\" title=\"" . $this->yellow->text->getHtml("cmail_link") . "\">";
 			$output .= htmlspecialchars($m_link ? : $this->yellow->text->getHtml("cmail_link")) . "</a> ";
         }
 	
