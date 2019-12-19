@@ -22,7 +22,7 @@ To uninstall simply delete the [extension files](update.ini).
 
 ### Setup
 
-You have to configure the plugin to your needs. After install open `{media-dir}/reply.php` and edit the header entries:
+You have to configure the plugin to your needs. After install open `{media}/reply.php` and edit the header entries:
 
 ```php+HTML
 $mailadress = "Insert target e-mail adress between the quotation marks";
