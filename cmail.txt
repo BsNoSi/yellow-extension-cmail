@@ -1,0 +1,19 @@
+# Datenstrom Yellow language file
+
+Language: de
+LanguageDescription: Deutsch
+LanguageTranslator: Norbert Simon
+
+cmail_std: Senden Sie eine E-Mail!
+
+Language: en
+LanguageDescription: English
+LanguageTranslator: Norbert Simon
+
+cmail_std: Send an e-mail!
+
+Language: fr
+LanguageDescription: English
+LanguageTranslator: Norbert Simon
+
+cmail_std: Envoyez un e-mail !

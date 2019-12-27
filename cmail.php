@@ -9,7 +9,7 @@
 // ***************************************************************
 
 class YellowCmail {
-    const VERSION = "1.3.0";
+    const VERSION = "1.3.1";
     const TYPE = "feature";
     //access to API
     public $yellow;         
@@ -20,16 +20,13 @@ class YellowCmail {
     // Handle page content of shortcut
     public function onParseContentShortcut($page, $name, $text, $type) {
         $output = null;
-        if ($name=="cmail") {
+        if ($name=="cmail") { 
             list($subject, $link, $title, $lng) = $this->yellow->toolbox->getTextArgs($text);
-            $subject = $subject ? $subject : "Send an e-mail!";
+            $subject = $subject ? $subject : ((!empty($lng)) ? $this->yellow->text->getText("cmail_std", $lng) : $this->yellow->text->get("cmail_std"));
 		$link = $link ? $link : $subject;
 		$title = $title ? $title : $subject;
 		$lng = $lng ? $lng . "-" : "" ;
-		$r_in =  array("%",   "/n",  " ",   "/",   "!",   "#",   "*",   "<",   ">",   "?",   "&");
-		$r_out = array("%25", "%0A", "%20", "%2F", "%21", "%23", "%2A", "%3C", "%3E", "%3F", "%26");
-				
-		$subject = str_replace($r_in,$r_out,$subject);
+		$subject = rawurlencode($subject);
 		$output = " <a href=\"/" . $this->yellow->system->get("mediaDir"). $lng . "reply.php?more=" . $subject;
 		$output .= "\" title=\"" . $title . "\">";
 		$output .= htmlspecialchars($link) . "</a> ";

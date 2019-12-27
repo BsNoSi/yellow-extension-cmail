@@ -4,7 +4,7 @@
 
 Read setup information carefully before update.
 
-### V 1.3.0 (Requires YELLOW 0.8.4 or higher)
+### V 1.3.1 (Requires YELLOW 0.8.4 or higher)
 
 Creates a standardized email with reference to the page from which it was sent and hides the email address from email grabbers.
 
@@ -22,20 +22,20 @@ To uninstall simply delete the [extension files](update.ini).
 
 ### Setup
 
-You have to configure the plugin to your needs. After install open `{media}/reply.php` and edit the header entries:
+You have to configure the plugin to your needs. After install open `{media-dir}/reply.php` and edit the header entries:
 
 ```php+HTML
 $mailadress = "Insert target e-mail adress between the quotation marks";
 $subject = "Insert the identifier for SPAM filterin between the quotation marks" . $_GET["more"];
-$body = "from page: " .$_SERVER['HTTP_REFERER'] ."\n\n";
-$body .= "Please leave subject and \"from address\" (parameters for spam filter), otherwise your message will end in the spam folder. That would be a pity. \n\n\Your request:";
+$body = "from page: " .$_SERVER['HTTP_REFERER'] ."\r\n\r\n";
+$body .= "Please leave subject and \"from address\" (parameters for spam filter), otherwise your message will end in the spam folder. That would be a pity. \r\n\r\n\Your request:";
 ```
 
-- To achieve line feeds in the body area, type `\n`, if you need quotation marks type `\"` 
+- To achieve line feeds in the body area, type `\r\n`, if you need quotation marks type `\"` 
 - Change the given texts according to your preferences, but only between the quotation marks.
-- Depending to your needs set the parameters for different language files. If additional languages are needed, duplicate an existing file with respective extender for the new language and set it up.
+- Depending to your needs set the parameters for each language file.
 
-> If you need only one language or have a preferred standard, you may remove the language selector from the file name. Then you can omit language identifier (see below).
+> Linefeeds in body  may be removed  by e-mail clients using only plain text.
 
 ## How do I use cmail extension?
 
@@ -43,13 +43,15 @@ Create a `[cmail  "subject" "linktext" "linktitle" "language"  ]` shortcut.
 
 The following arguments are available
 
-**subject**, *optional* (not really…)  : appended to the subject of the e-mail. If empty, the standard replacement `Send an e-mail!` is used.
+**subject**, *optional*   : appended to the subject of the e-mail. If empty, the given standard from `cmail.txt` is used. You may change it to your needs.
 
 **linktext**, *optional* :  The text holding the link shown on the page. If empty filled with subject.
 
 **linktitle**, *optional* : The popup title of the link on hover. If empty filled with subject.
 
-**language**, *optional* : Only needed in multilingual environments. Predefined identifiers are `en`,`de`,`fr` 
+**language**, *optional* : Only needed in multilingual environments. Available identifiers are `en`,`de`,`fr`.  If additional languages are needed, duplicate an existing file with respective extender for the new language and set it up. Add suitable standard texts in `cmail.txt` as well.
+
+**Anyway you need a language file appropriate to the language setup in `system.ini` of Datenstrom Yellow.** 
 
 ## Examples
 
@@ -97,7 +99,9 @@ Your request:
 
 2019-04-24, v1.2: Initial Release, creating a readable »mailto« link.
 
-2019-12-18, v.1.3: New strategy for hiding readable »mailto« link.
+2019-12-18, v.1.3: New strategy for hiding readable »mailto« link by using header-location.
+
+2019-12-27, v 1.3.1: Standardised parameter encoding, shown standard text and used reply defined by website language (default) or given language identifier.
 
 ## Developer
 
