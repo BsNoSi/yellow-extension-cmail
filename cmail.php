@@ -22,7 +22,8 @@ class YellowCmail {
         $output = null;
         if ($name=="cmail") { 
             list($subject, $link, $title, $lng) = $this->yellow->toolbox->getTextArgs($text);
-            $subject = $subject ? $subject : ((!empty($lng)) ? $this->yellow->text->getText("cmail_std", $lng) : $this->yellow->text->get("cmail_std"));
+		$lng = empty($lng) ? $this->yellow->text->get("language") : $lng;
+		$subject = $subject ? $subject : $this->yellow->text->getText("cmail_std", $lng); 
 		$link = $link ? $link : $subject;
 		$title = $title ? $title : $subject;
 		$lng = $lng ? $lng . "-" : "" ;
