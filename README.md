@@ -1,10 +1,10 @@
 # Yellow Extension Cmail 
 
-## ⚠ Changed behaviour of parameters! 
+## ⚠ Changed behavior of parameters! 
 
 Read setup information carefully before update.
 
-### V 1.3.1 (Requires YELLOW 0.8.4 or higher)
+### V 1.3.2 (Requires YELLOW 0.8.4 or higher)
 
 Creates a standardized email with reference to the page from which it was sent and hides the email address from email grabbers.
 
@@ -53,30 +53,38 @@ The following arguments are available
 
 **Anyway you need a language file appropriate to the language setup in `system.ini` of Datenstrom Yellow.** 
 
+To highlight e-mail links, add a style `.cmail` to your stylesheet, perhaps something like this:
+
+~~~.css
+.cmail:before {content: "\002709\00202F"; color:#FF6633;}
+~~~
+
+This would display e-mail links like this  »[<span style="color:#FF6633">&#x2709;&#x202F;</span>The Link-text](#_)«.
+
 ## Examples
 
 Minimum: `[cmail]` leads to 
 
 ~~~.HTML
-<a href="/media/reply.php?more=Send%20an%20e-mail%21" title="Send an e-mail!">Send an e-mail!</a>
+<a class="cmail" href="/media/reply.php?more=Send%20an%20e-mail%21" title="Send an e-mail!">Send an e-mail!</a>
 ~~~
 
 Subject: `[cmail "Contact me"]` leads to
 
 ~~~.HTML
-<a href="/media/reply.php?more=Contact%20me" title="Contact me">Contact me</a>
+<a class="cmail"  href="/media/reply.php?more=Contact%20me" title="Contact me">Contact me</a>
 ~~~
 
 Complete standard: `[cmail "Order" "Place your order!" "Opens your e-mail client"]` leads to
 
 ~~~.HTML
-<a href="/media/reply.php?more=Order" title="Opens your e-mail client">Place your order!</a>
+<a class="cmail"  href="/media/reply.php?more=Order" title="Opens your e-mail client">Place your order!</a>
 ~~~
 
 Different language: [cmail "Bestellung" ""Senden Sie ihre Bestellung" "Öffnet Ihr E-Mail-Programm" de]
 
 ~~~.HTML
-<a href="/media/de-reply.php?more=Bestellung" title="Öffnet Ihr E-Mail-Programm">Senden Sie ihre Bestellung</a>
+<a class="cmail"  href="/media/de-reply.php?more=Bestellung" title="Öffnet Ihr E-Mail-Programm">Senden Sie ihre Bestellung</a>
 ~~~
 
 The "complete standard" opens a prefilled e-mail in the standard e-mail client with this content:
@@ -102,6 +110,8 @@ Your request:
 2019-12-18, v.1.3: New strategy for hiding readable »mailto« link by using header-location.
 
 2019-12-27, v 1.3.1: Standardised parameter encoding, shown standard text and used reply defined by website language (default) or given language identifier.
+
+2019-12-29, v 1.3.2: Class added
 
 ## Developer
 
