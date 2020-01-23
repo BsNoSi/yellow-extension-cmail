@@ -9,7 +9,7 @@
 // ***************************************************************
 
 class YellowCmail {
-    const VERSION = "1.3.2";
+    const VERSION = "1.3.3";
     const TYPE = "feature";
     //access to API
     public $yellow;         
@@ -28,7 +28,7 @@ class YellowCmail {
 		$title = $title ? $title : $subject;
 		$lng = $lng ? $lng . "-" : "" ;
 		$subject = rawurlencode($subject);
-		$output = " <a class=\"cmail\" href=\"/" . $this->yellow->system->get("mediaDir"). $lng . "reply.php?more=" . $subject;
+		$output = " <a class=\"cmail\" href=\"/" . $this->yellow->system->get("mediaDir")."cmail/". $lng . "reply.php?more=" . $subject;
 		$output .= "\" title=\"" . $title . "\">";
 		$output .= htmlspecialchars($link) . "</a> ";
         }

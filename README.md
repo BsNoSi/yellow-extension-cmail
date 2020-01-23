@@ -4,7 +4,7 @@
 
 Read setup information carefully before update.
 
-### V 1.3.2 (Requires YELLOW 0.8.4 or higher)
+### V 1.3.3
 
 Creates a standardized email with reference to the page from which it was sent and hides the email address from email grabbers.
 
@@ -112,6 +112,8 @@ Your request:
 2019-12-27, v 1.3.1: Standardised parameter encoding, shown standard text and used reply defined by website language (default) or given language identifier.
 
 2019-12-29, v 1.3.2: Class added
+
+2020-01-23, v 1.3.3: Subfolder in »media« for cmail php files
 
 ## Developer
 
