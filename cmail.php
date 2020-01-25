@@ -3,13 +3,12 @@
 // Copyright ©2018-now Norbert Simon, https://nosi.de for
 // YELLOW Copyright ©2013-now Datenstrom, http://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
-// requires YELLOW 0.8.4 or higher
 // ***************************************************************
 // SEE README.MD FOR SETUP REQUIREMENTS
 // ***************************************************************
 
 class YellowCmail {
-    const VERSION = "1.3.3";
+    const VERSION = "1.5.0";
     const TYPE = "feature";
     //access to API
     public $yellow;         
@@ -26,10 +25,10 @@ class YellowCmail {
 		$subject = $subject ? $subject : $this->yellow->text->getText("cmail_std", $lng); 
 		$link = $link ? $link : $subject;
 		$title = $title ? $title : $subject;
-		$lng = $lng ? $lng . "-" : "" ;
+		$lng = $lng ? "&l=". $lng : "" ;
 		$subject = rawurlencode($subject);
-		$output = " <a class=\"cmail\" href=\"/" . $this->yellow->system->get("mediaDir")."cmail/". $lng . "reply.php?more=" . $subject;
-		$output .= "\" title=\"" . $title . "\">";
+		$output = " <a class=\"cmail\" href=\"/xtra/cmail?s=" . $subject . $lng;
+		$output .= "\" title=\"" . $title ."\">";
 		$output .= htmlspecialchars($link) . "</a> ";
         }
         return $output;

@@ -4,13 +4,13 @@
 
 Read setup information carefully before update.
 
-### V 1.3.3
+### V 1.5.0
 
 Creates a standardized email with reference to the page from which it was sent and hides the email address from email grabbers.
 
 ## The Idea Behind
 
-Annoyed by the SPAM flood in your mailbox, you can use a special email address with keywords in the subject for filtering. Spammers can hardly take this into account, so it is easy to filter unwanted mail to this address. This extension sets the standard.
+Annoyed by the SPAM flood in your mailbox, you can use a special email address with keywords in the subject for filtering. Spammers can hardly take this into account, so it is easy to filter unwanted mail to this address. This extension sets the (adjustable) standard.
 
 ## How do I Install This?
 
@@ -20,72 +20,43 @@ Annoyed by the SPAM flood in your mailbox, you can use a special email address w
 
 To uninstall simply delete the [extension files](update.ini).
 
+> Previous versions installed »cmail…«-files into "media" folder. These files are obsolete. Please delete them.
+
 ### Setup
 
-You have to configure the plugin to your needs. After install open `{media-dir}/reply.php` and edit the header entries:
+You have to configure the plugin to your needs. After install open `system/extensions/cmail.txt` and edit the entries with »domain.tld« as placeholder for your website / e-mail adress.
 
-```php+HTML
-$mailadress = "Insert target e-mail adress between the quotation marks";
-$subject = "Insert the identifier for SPAM filterin between the quotation marks" . $_GET["more"];
-$body = "from page: " .$_SERVER['HTTP_REFERER'] ."\r\n\r\n";
-$body .= "Please leave subject and \"from address\" (parameters for spam filter), otherwise your message will end in the spam folder. That would be a pity. \r\n\r\n\Your request:";
-```
+> You may alter the texts to your needs. Linefeeds are created with »\n«. You may delete unnecessary languages or add required by copying an existing language block and setting the respective language identifier.
 
-- To achieve line feeds in the body area, type `\r\n`, if you need quotation marks type `\"` 
-- Change the given texts according to your preferences, but only between the quotation marks.
-- Depending to your needs set the parameters for each language file.
-
-> Linefeeds in body  may be removed  by e-mail clients using only plain text.
+Note: Linefeeds in body  may be removed  by some e-mail clients using only plain text.
 
 ## How do I use cmail extension?
 
-Create a `[cmail  "subject" "linktext" "linktitle" "language"  ]` shortcut.
+You can simply put »[cmail]« into your text, that will create a standard text and e-mail data. For more sophisticated use, you can add *optional* parameters:
 
-The following arguments are available
+`[cmail  "subject" "linktext" "linktitle" "language"  ]`
 
-**subject**, *optional*   : appended to the subject of the e-mail. If empty, the given standard from `cmail.txt` is used. You may change it to your needs.
+**subject**: appended to the subject of the e-mail. If empty, the given standard from `cmail.txt` is used. You may change this entry to your needs.
 
-**linktext**, *optional* :  The text holding the link shown on the page. If empty filled with subject.
+**linktext**:  The *link text* shown on the page. If empty filled with subject.
 
-**linktitle**, *optional* : The popup title of the link on hover. If empty filled with subject.
+**linktitle**: The popup title of the link on hover. If empty filled with subject.
 
-**language**, *optional* : Only needed in multilingual environments. Available identifiers are `en`,`de`,`fr`.  If additional languages are needed, duplicate an existing file with respective extender for the new language and set it up. Add suitable standard texts in `cmail.txt` as well.
+**language**: Only needed to force a specific language. Available identifiers are `en`,`de`,`fr`.  If additional languages are needed, add suitable standard texts in `cmail.txt`. 
 
-**Anyway you need a language file appropriate to the language setup in `system.ini` of Datenstrom Yellow.** 
+**Anyway you need a translation appropriate to the language setup in `system.ini` of Datenstrom Yellow.** 
 
-To highlight e-mail links, add a style `.cmail` to your stylesheet, perhaps something like this:
+> Typically, the current language is used by default.
+
+To highlight e-mail links, add a style `.cmail` to your stylesheet, possibly something like this:
 
 ~~~.css
 .cmail:before {content: "\002709\00202F"; color:#FF6633;}
 ~~~
 
-This would display e-mail links like this  »[<span style="color:#FF6633">&#x2709;&#x202F;</span>The Link-text](#_)«.
+This would display e-mail links like this  »[<span style="color:#FF6633">&#x2709;&#x202F;</span>The Link-text](#_)«. (should have a leading envelope symbol)
 
-## Examples
-
-Minimum: `[cmail]` leads to 
-
-~~~.HTML
-<a class="cmail" href="/media/reply.php?more=Send%20an%20e-mail%21" title="Send an e-mail!">Send an e-mail!</a>
-~~~
-
-Subject: `[cmail "Contact me"]` leads to
-
-~~~.HTML
-<a class="cmail"  href="/media/reply.php?more=Contact%20me" title="Contact me">Contact me</a>
-~~~
-
-Complete standard: `[cmail "Order" "Place your order!" "Opens your e-mail client"]` leads to
-
-~~~.HTML
-<a class="cmail"  href="/media/reply.php?more=Order" title="Opens your e-mail client">Place your order!</a>
-~~~
-
-Different language: [cmail "Bestellung" ""Senden Sie ihre Bestellung" "Öffnet Ihr E-Mail-Programm" de]
-
-~~~.HTML
-<a class="cmail"  href="/media/de-reply.php?more=Bestellung" title="Öffnet Ihr E-Mail-Programm">Senden Sie ihre Bestellung</a>
-~~~
+## Result
 
 The "complete standard" opens a prefilled e-mail in the standard e-mail client with this content:
 
@@ -114,6 +85,8 @@ Your request:
 2019-12-29, v 1.3.2: Class added
 
 2020-01-23, v 1.3.3: Subfolder in »media« for cmail php files
+
+2020-01-25, v.1.5.0: Redesign of concept. Now aligns to YELLOW CMS strategy without additional php files.
 
 ## Developer
 

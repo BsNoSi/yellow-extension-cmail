@@ -1,0 +1,24 @@
+<?php
+// belongs to cmail extension version 1.5.0 for YELLOW, https://github.com/bsnosi/yellow-extension-cmail
+// YELLOW Copyright ©2013-now Datenstrom, http://datenstrom.se
+// This file may be used and distributed under the terms of the public license.
+// ***************************************************************
+// Setup see cmail.txt
+// ***************************************************************
+
+	$lng = $_GET["l"];
+	$mailadress = $this->yellow->text->getText("cmail_adr",$lng);
+	$subject = $this->yellow->text->getText("cmail_subject",$lng) . " ". $_GET["s"];
+      $body = $this->yellow->text->getText("cmail_ref",$lng) . " " .$_SERVER['HTTP_REFERER'] .  $this->yellow->text->getText("cmail_body",$lng);
+	
+	$body = str_replace('\n',"\n",$body);
+        
+	$output = "Location: mailto:" . $mailadress;
+	$output .= "?subject=" . rawurlencode($subject);
+      $output .= "&body=". rawurlencode($body); 
+	
+	 header($output);
+	  sleep(1);
+	 header($_SERVER['HTTP_REFERER']);
+    exit;
+?>
