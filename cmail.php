@@ -8,7 +8,7 @@
 // ***************************************************************
 
 class YellowCmail {
-    const VERSION = "1.5.0";
+    const VERSION = "1.5.1";
     const TYPE = "feature";
     //access to API
     public $yellow;         
@@ -20,7 +20,7 @@ class YellowCmail {
     public function onParseContentShortcut($page, $name, $text, $type) {
         $output = null;
         if ($name=="cmail") { 
-            list($subject, $link, $title, $lng) = $this->yellow->toolbox->getTextArgs($text);
+            list($subject, $link, $title, $lng) = $this->yellow->toolbox->getTextArguments($text);
 		$lng = empty($lng) ? $this->yellow->text->get("language") : $lng;
 		$subject = $subject ? $subject : $this->yellow->text->getText("cmail_std", $lng); 
 		$link = $link ? $link : $subject;
