@@ -22,7 +22,7 @@ cmail_ref: From address:
 cmail_body: \n\nPlease leave subject and "from address" (parameters for spam filter),\notherwise your message will end in the spam folder. That would be a pity.\n\nYour Request:
 
 Language: fr
-LanguageDescription: English
+LanguageDescription: French
 LanguageTranslator: Norbert Simon
 
 cmail_std: Envoyez un e-mail !
