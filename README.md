@@ -1,10 +1,8 @@
 # Yellow Extension Cmail 
 
-## ⚠ Changed behavior of parameters! 
+⚠ Read setup information carefully before install and update.
 
-Read setup information carefully before update.
-
-### V 1.5.0
+### V 1.5.1
 
 Creates a standardized email with reference to the page from which it was sent and hides the email address from email grabbers.
 
@@ -86,7 +84,9 @@ Your request:
 
 2020-01-23, v 1.3.3: Subfolder in »media« for cmail php files
 
-2020-01-25, v.1.5.0: Redesign of concept. Now aligns to YELLOW CMS strategy without additional php files.
+2020-01-25, v 1.5.0: Redesign of concept. Now aligns to YELLOW CMS strategy without additional php files.
+
+2020-07-19, v 1.5.1: Alignments to new API → requires Yellow 0.8.3 and above
 
 ## Developer
 
