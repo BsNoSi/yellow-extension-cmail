@@ -1,24 +1,30 @@
 <?php
-// belongs to cmail extension version 1.5.0 for YELLOW, https://github.com/bsnosi/yellow-extension-cmail
-// YELLOW Copyright ©2013-now Datenstrom, http://datenstrom.se
-// This file may be used and distributed under the terms of the public license.
-// ***************************************************************
-// Setup see cmail.txt
-// ***************************************************************
+  if (empty($_SERVER['HTTP_REFERER']))
+  { 
+    echo "<h1>Ups!</h1><h2>So geht das schief. Diese Seite kann nur über eine Link von anderen Seiten der Homepage aufgerufen werden.</h2>";
+  }
+  else
+  {
+    $backto = $_SERVER['HTTP_REFERER'];
+    $lng = $_GET["l"];
+    $mailadress = $this->yellow->language->getText("cmail_email", $lng);
+    $subject = $this->yellow->language->getText("cmail_subtitle", $lng) . " "  . $_GET["q"];
+    $body = $this->yellow->language->getText("cmail_from", $lng) . $backto . "\r\n\r\n";
+    $body .= $this->yellow->language->getText("cmail_body", $lng) . "\r\n\r\n";
+    $output = "mailto:" . $mailadress;
+    $output .= "?subject=" . rawurlencode($subject);
+    $body = str_replace('\n',"\n",$body);
+    $output .= "&body=". rawurlencode($body);
 
-	$lng = $_GET["l"];
-	$mailadress = $this->yellow->text->getText("cmail_adr",$lng);
-	$subject = $this->yellow->text->getText("cmail_subject",$lng) . " ". $_GET["s"];
-      $body = $this->yellow->text->getText("cmail_ref",$lng) . " " .$_SERVER['HTTP_REFERER'] .  $this->yellow->text->getText("cmail_body",$lng);
+    $this->yellow->layout("header");
+    echo "<div class=\"content\"><div class=\"main\" role=\"main\">";
+
+    echo "<h1>" . $this->yellow->language->getText("cmail_head", $lng) . "</h1>";
+    echo "<p>" . $this->yellow->language->getText("cmail_note", $lng) . "</p>";
+    echo "<p><br/><br/><button type=\"button\" onclick=\"window.open('', '_self', ''); window.close();\">" . $this->yellow->language->getText("cmail_button", $lng) . "</button></p>";
 	
-	$body = str_replace('\n',"\n",$body);
-        
-	$output = "Location: mailto:" . $mailadress;
-	$output .= "?subject=" . rawurlencode($subject);
-      $output .= "&body=". rawurlencode($body); 
+     $this->yellow->layout("footer");
 	
-	 header($output);
-	  sleep(1);
-	 header($_SERVER['HTTP_REFERER']);
-    exit;
+     header("Refresh:0; url=". $output);
+   }
 ?>
