@@ -1,0 +1,17 @@
+# Datenstrom Yellow language file
+
+Language: en
+LanguageDescription: French
+LanguageTranslator: Norbert Simon
+
+cmail_adress: ladresse@domain.tld
+cmail_site: https://domain.tld
+cmail_subtitle: Sujet Titre:
+cmail_from: Demande à partir de la page:
+cmail_body: Veuillez laisser le sujet et "de la page" : Votre demande passera sans problème le filtre anti-spam.\n\nVotre demande: 
+cmail_link: Demande par courrier électronique
+
+
+cmail_head: Ouvrir le programme de courrier électronique 
+cmail_note: Le programme de courrier électronique standard est utilisé pour votre demande. Par conséquent, aucune de vos données ne sera traitée sur le serveur, vous en gardez le contrôle. Dans le courrier électronique, vous pouvez déterminer librement les données que vous transmettez.  
+cmail_button: Fermer ce message
