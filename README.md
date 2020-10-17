@@ -1,16 +1,14 @@
 # Yellow Extension Cmail 
 
-Read setup information carefully before install/update.
+Version 1.6.1
 
-### V 1.6.0
+> Tested with core version 0.8.23
 
-> Tested with Yellow 0.815
+Application
 
 Creates a standardized email with reference to the page from which it was sent and hides the email address from email grabbers.
 
-## The Idea Behind
-
-Annoyed by the SPAM flood in your mailbox, you can use a special email address with keywords in the subject for filtering. Spammers can hardly take this into account, so it is easy to filter unwanted mail to this address. This extension sets the (adjustable) standard.
+**Read setup information carefully before install/update.**
 
 ## Install
 
@@ -22,18 +20,17 @@ To uninstall simply delete the [extension files](extension.ini).
 
 ### Cleanup older versions
 
-1. Previous versions installed »cmail…«-files into "media" folder. These files are obsolete. Please delete them.
-2. Previous versions installed the translation in a single "cmail.txt" file. Please detlet it.
+Previous versions installed »cmail…«-files into "media" folder. These files are obsolete. Please delete them.
 
 ## Setup
 
-You have to configure the plugin to your needs. After install open the `system/extensions/cmail-[lng].txt` files and edit the entries with »domain.tld« as placeholder for your website / e-mail adress.
+Annoyed by the SPAM flood in your mailbox, you can use a special email address with keywords in the subject for filtering your mailbox. Spammers can hardly take this into account, so it is easy to filter unwanted mail to this address. This extension sets the adjustable standard.
 
-You may alter the texts to your needs. Linefeeds in e-mail text are created with »\n«. For text of the information page you may use `<br/>`.
+You have to configure the extension to your needs. After install open the `system/extensions/cmail.txt` files and edit all entries with »domain.tld« (placeholder for your website / e-mail adress).
 
-Note: Linefeeds in body  may be removed  by some e-mail clients using only plain text.
+You may alter the texts to your needs. Linefeeds in e-mail text are created with »\n«. For text of the information page you have to use `<br/>`. You have to place the whole text in one line.
 
-Delete unnecessary languages or add required by copying/translating an existing language block and setting the respective language identifier.
+Note: Linefeeds in e-mail body  may be ignored  by some e-mail clients using only plain text.
 
 
 ## Usage
@@ -42,29 +39,22 @@ You can simply put »[cmail]« into your text to create a standard text and e-ma
 
 `[cmail  "subject" "linktext" "linktitle" "language"  ]`
 
-**subject**: appended to the subject title of the e-mail. If empty, the given standard from `cmail.txt` is used. You can change this entry to your needs.
+| Parameter | Function |
+| :---: | :--- |
+| subject | Content is appended to the preset subject title of the e-mail which is used always.You can change this entry of `cmail.txt` to your needs. |
+| linktext | The *link text* shown on the page. If empty filled with `subject`. |
+| linktitle | The popup title of the link on hover. If empty filled with `subject`. |
+| language | If empty the preset language of `system.ini`is used. You can force a language by using the available identifiers `en`,`de`,`fr` (and more, if you add them) from `cmail.txt`. |
 
-**linktext**:  The *link text* shown on the page. If empty filled with subject.
-
-**linktitle**: The popup title of the link on hover. If empty filled with subject.
-
-**language**: Only needed to force a specific language. Available identifiers are `en`,`de`,`fr`.  If additional languages are needed, add suitable translation files. 
-
-**Anyway you need a translation appropriate to the language setup in `system.ini` of Datenstrom Yellow.** 
-
-> The defined language of `system.ini` is used by default.
-
-To highlight e-mail links, add a style `.cmail` to your stylesheet, possibly something like this:
+The generated output is enclosed by a class `cmail`. If you want to mark e-mail links, add a style `.cmail` to your stylesheet, possibly something like this:
 
 ~~~.css
 .cmail:before {content: "\002709\00202F"; color:#FF6633;}
 ~~~
 
-This would display e-mail links like this  »[<span style="color:#FF6633">&#x2709;&#x202F;</span>The Link-text](#_)«. (should have a leading envelope symbol)
+This would display e-mail links like this  »[<span style="color:#FF6633">&#x2709;&#x202F;</span>The Link-text](#_)« : A linked text precceeded by an envelope symbol.
 
-## Result
-
-The "complete standard" opens a prefilled e-mail in the standard e-mail client with this content:
+This link creates a standardised e-mail that is opened in the standard e-mail client with this content:
 
 ```
 to: 
@@ -79,7 +69,11 @@ Please leave the subject and "from page": Your enquiry will reliably slip throug
 Your enquiry:
 ```
 
+Additionally, there is a page opened with a description what (should) happen now and why. The used e-mail address is completely hidden because it is opened directly without revealing it anywhere in page sources that might be scanned by e-mail grabbers.
+
 ### History
+
+2020-10-17: API changes applied, translations again collected in single file (current standard).
 
 2020-10-13, v.1.6.0: Simplification of language handling. Opens an information page now to give feedback for things happening. 
 
