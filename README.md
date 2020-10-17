@@ -4,7 +4,7 @@ Version 1.6.1
 
 > Tested with core version 0.8.23
 
-Application
+## Application
 
 Creates a standardized email with reference to the page from which it was sent and hides the email address from email grabbers.
 
