@@ -1,0 +1,36 @@
+# cmail extension, https://github.com/BsNoSi/yellow-extension-cmail
+# replace ALL cmail_email and cmail_site entries to your need
+
+Language: de
+cmail_email: themail@domain.tld
+cmail_site: https://domain.tld
+cmail_subtitle: Subject Title:
+cmail_from: Anfrage von Seite:
+cmail_body: Bitte Betreff und „von Seite“ stehen lassen: Damit schlüpft Ihre Anfrage zuverlässig durch den Spam-Filter.\n\nIhre Anfrage:
+cmail_link: Anfrage per E-Mail 
+cmail_head: E-Mail-Programm öffnen
+cmail_note: Für Ihre Anfrage wird das Standardprogramm für E-Mails verwendet. Daher werden keine Daten von Ihnen auf dem Server verarbeitet, Sie behalten die Kontrolle darüber. In der E-Mail können Sie frei bestimmen, welche Daten Sie übermitteln. 
+cmail_button: Dieses Hinweisfenster schließen
+
+
+Language: en
+cmail_email: themail@domain.tld
+cmail_site: https://domain.tld
+cmail_subtitle: Title for Subject:
+cmail_from: Request from page:
+cmail_body: Please leave the subject and "from page": Your enquiry will reliably slip through the spam filter.\n\nYour enquiry:
+cmail_link: Enquiry by e-mail
+cmail_head: Opening E-mail application 
+cmail_note: The standard programme for e-mails is used for your request. Therefore no data of yours will be processed on the server, you keep control over it. In the e-mail you can freely determine which data you transmit. 
+cmail_button: Close this message
+
+Language: fr
+cmail_email: themail@domain.tld
+cmail_site: https://domain.tld
+cmail_subtitle: Sujet Titre:
+cmail_from: Demande à partir de la page:
+cmail_body: Veuillez laisser le sujet et "de la page" : Votre demande passera sans problème le filtre anti-spam.\n\nVotre demande: 
+cmail_link: Demande par courrier électronique
+cmail_head: Ouvrir le programme de courrier électronique 
+cmail_note: Le programme de courrier électronique standard est utilisé pour votre demande. Par conséquent, aucune de vos données ne sera traitée sur le serveur, vous en gardez le contrôle. Dans le courrier électronique, vous pouvez déterminer librement les données que vous transmettez.  
+cmail_button: Fermer ce message
