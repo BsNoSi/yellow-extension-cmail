@@ -1,8 +1,8 @@
 # Yellow Extension Cmail 
 
-Version 1.6.1
+Version 1.6.2
 
-> Tested with core version 0.8.23
+> Tested with Version 0.8.33 / Release 0.8.16 of Yellow
 
 ## Application
 
@@ -72,6 +72,8 @@ Your enquiry:
 Additionally, there is a page opened with a description what (should) happen now and why. The used e-mail address is completely hidden because it is opened directly without revealing it anywhere in page sources that might be scanned by e-mail grabbers.
 
 ### History
+
+2020-11-21: Alignment to install changes
 
 2020-10-17: API changes applied, translations again collected in single file (current standard).
 
