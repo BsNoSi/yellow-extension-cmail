@@ -1,5 +1,7 @@
 # Yellow Extension Cmail 
 
+**Development discontinued.**
+
 Version 1.6.2
 
 > Tested with Version 0.8.33 / Release 0.8.16 of Yellow
